@@ -28,10 +28,10 @@
         public function setIDProduto(int $idProduto){
             $this->idProduto = $idProduto;}
 
-        public function getQtde(){
+        public function getQuantidade(){
             return $this->quantidade;}
 
-        public function setQtde(int $quantidade){
+        public function setQuantidade(int $quantidade){
             $this->quantidade = $quantidade;}
 
         public function getTotal(){
