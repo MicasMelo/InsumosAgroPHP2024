@@ -78,7 +78,7 @@
   <ul id="menu-mobile" class="sidenav"> <li><a href="/gestaosemear/CONTROLLER/logout.php">Logout</a></li> </ul>
 
   <div class="button-container">
-    <a href="/gestaosemear/VIEW/PRODUTO/listarProduto.php" class="button">Produto</a>
+    <a href="/gestaosemear/VIEW/PRODUTO/listarProduto.php" class="button">Produtos</a>
     <a href="/gestaosemear/VIEW/CLIENTE/listarCliente.php" class="button">Cliente</a>
     <a href="/gestaosemear/VIEW/PEDIDO/listarPedido.php" class="button">Pedidos</a>
   </div>
