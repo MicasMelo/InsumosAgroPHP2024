@@ -47,15 +47,6 @@
       margin: 10px;
     }
     .button:hover { background-color: #004d00; }
-    .button-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      height: 100px;
-      margin-top: 150px;
-      width: 100%;
-    }
   </style>
 
   <link rel="icon" href="/gestaosemear/IMG/plantaikon.png">
@@ -70,18 +61,24 @@
   <nav class="nav-wrapper z-depth-0">
     <div class="container">
       <a href="/gestaosemear/VIEW/menu.php" class="brand-logo left">SEMEAR</a>
-      <a href="#" data-target="menu-mobile" class="sidenav-trigger right"> <i class="material-icons">menu</i> </a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down"> <li><a href="/gestaosemear/CONTROLLER/logout.php">Logout</a></li> </ul>
+      <a href="#" data-target="menu-mobile" class="sidenav-trigger right">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/gestaosemear/VIEW/PRODUTO/listarProduto.php">Produto</a></li>
+        <li><a href="/gestaosemear/VIEW/CLIENTE/listarCliente.php">Cliente</a></li>
+        <li><a href="/gestaosemear/VIEW/PEDIDO/listarPedido.php">Pedidos</a></li>
+        <li><a href="/gestaosemear/CONTROLLER/logout.php">Logout</a></li>
+      </ul>
     </div>
   </nav> 
 
-  <ul id="menu-mobile" class="sidenav"> <li><a href="/gestaosemear/CONTROLLER/logout.php">Logout</a></li> </ul>
-
-  <div class="button-container">
-    <a href="/gestaosemear/VIEW/PRODUTO/listarProduto.php" class="button">Produto</a>
-    <a href="/gestaosemear/VIEW/CLIENTE/listarCliente.php" class="button">Cliente</a>
-    <a href="/gestaosemear/VIEW/PEDIDO/listarPedido.php" class="button">Pedidos</a>
-  </div>
+  <ul id="menu-mobile" class="sidenav">
+    <li><a href="/gestaosemear/VIEW/PRODUTO/listarProduto.php">Produto</a></li>
+    <li><a href="/gestaosemear/VIEW/CLIENTE/listarCliente.php">Cliente</a></li>
+    <li><a href="/gestaosemear/VIEW/PEDIDO/listarPedido.php">Pedidos</a></li>
+    <li><a href="/gestaosemear/CONTROLLER/logout.php">Logout</a></li>
+  </ul>
 
   <div class="footer">
     <?php include_once 'C:\xampp\htdocs\gestaosemear\CONTROLLER\footer.php'; ?>
