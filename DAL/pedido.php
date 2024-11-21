@@ -10,11 +10,13 @@
             $dados = $con->query($sql);
             $con = conexao::desconectar();
 
+            $listaPdd = [];
             foreach ($dados as $linha){
                 $pedido = new \MODEL\pedido();
                 $pedido->setID($linha['id']);
                 $pedido->setIDCliente($linha['idCliente']);
                 $pedido->setIDProduto($linha['idProduto']);
+                $pedido->setData($linha['dataPedido']);
                 $pedido->setQuantidade($linha['quantidade']);
                 $pedido->setTotal($linha['total']);
                 $pedido->setStatus($linha['status']);
@@ -34,6 +36,7 @@
             $pedido->setID($linha['id']);
             $pedido->setIDCliente($linha['idCliente']);
             $pedido->setIDProduto($linha['idProduto']);
+            $pedido->setData($linha['dataPedido']);
             $pedido->setQuantidade($linha['quantidade']);
             $pedido->setTotal($linha['total']);
             $pedido->setStatus($linha['status']);
@@ -41,9 +44,9 @@
         }
 
         public function Insert(\MODEL\pedido $pdd){
-            $sql = "INSERT INTO pedido (idCliente,idProduto,quantidade,total,status)
-                    VALUES ('{$pdd->getIDCliente()}','{$pdd->getIDProduto()}','{$pdd->getQuantidade()}',
-                            '{$pdd->getTotal()}','{$pdd->getStatus()}');";
+            $sql = "INSERT INTO pedido (idCliente,idProduto,dataPedido,quantidade,total,status)
+                    VALUES ('{$pdd->getIDCliente()}','{$pdd->getIDProduto()}','{$pdd->getData()}',
+                            '{$pdd->getQuantidade()}','{$pdd->getTotal()}','{$pdd->getStatus()}');";
             $con = conexao::conectar();
             $result = $con->query($sql);
             $con = conexao::desconectar();

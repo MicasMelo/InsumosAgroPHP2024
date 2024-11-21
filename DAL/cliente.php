@@ -10,6 +10,7 @@
             $dados = $con->query($sql);
             $con = conexao::desconectar();
 
+            $listaCli = [];
             foreach ($dados as $linha){
                 $cliente = new \MODEL\cliente();
                 $cliente->setID($linha['id']);
