@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11/11/2024 às 03:43
+-- Tempo de geração: 21/11/2024 às 20:04
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -34,6 +34,13 @@ CREATE TABLE `cliente` (
   `endereco` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `cliente`
+--
+
+INSERT INTO `cliente` (`id`, `nome`, `contato`, `endereco`) VALUES
+(1, 'Roberta', '(18)99945-4140', 'Rua das Flores, 48');
+
 -- --------------------------------------------------------
 
 --
@@ -44,6 +51,7 @@ CREATE TABLE `pedido` (
   `id` int(11) NOT NULL,
   `idCliente` int(11) NOT NULL,
   `idProduto` int(11) NOT NULL,
+  `dataPedido` date NOT NULL,
   `quantidade` int(11) NOT NULL,
   `total` double NOT NULL,
   `status` int(11) NOT NULL
@@ -61,6 +69,13 @@ CREATE TABLE `produto` (
   `estoque` int(11) NOT NULL,
   `valor` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `produto`
+--
+
+INSERT INTO `produto` (`id`, `descricao`, `estoque`, `valor`) VALUES
+(1, 'Semente de Morango', 45, 1.55);
 
 -- --------------------------------------------------------
 
@@ -94,6 +109,14 @@ CREATE TABLE `usuario` (
   `usuario` varchar(20) NOT NULL,
   `senha` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `usuario`, `senha`) VALUES
+(1, 'Micaella', '202cb962ac59075b964b07152d234b70'),
+(2, 'Vinicius', 'caf1a3dfb505ffed0d024130f58c5cfa');
 
 --
 -- Índices para tabelas despejadas
@@ -139,7 +162,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `pedido`
@@ -151,13 +174,13 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para tabelas despejadas
