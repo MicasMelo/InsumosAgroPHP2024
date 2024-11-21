@@ -4,6 +4,7 @@
         private ?int $id;
         private ?int $idCliente;
         private ?int $idProduto;
+        private ?int $dataPedido;
         private ?int $quantidade;
         private ?float $total;
         private ?int $status;
@@ -27,6 +28,12 @@
 
         public function setIDProduto(int $idProduto){
             $this->idProduto = $idProduto;}
+
+        public function getData(){
+            return $this->dataPedido;}
+    
+        public function setData(int $dataPedido){
+            $this->dataPedido = $dataPedido;}
 
         public function getQuantidade(){
             return $this->quantidade;}
