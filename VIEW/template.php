@@ -65,7 +65,7 @@
         <i class="material-icons">menu</i>
       </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/gestaosemear/VIEW/PRODUTO/listarProduto.php">Produto</a></li>
+        <li><a href="/gestaosemear/VIEW/PRODUTO/listarProduto.php">Produtos</a></li>
         <li><a href="/gestaosemear/VIEW/CLIENTE/listarCliente.php">Cliente</a></li>
         <li><a href="/gestaosemear/VIEW/PEDIDO/listarPedido.php">Pedidos</a></li>
         <li><a href="/gestaosemear/CONTROLLER/logout.php">Logout</a></li>
@@ -74,7 +74,7 @@
   </nav> 
 
   <ul id="menu-mobile" class="sidenav">
-    <li><a href="/gestaosemear/VIEW/PRODUTO/listarProduto.php">Produto</a></li>
+    <li><a href="/gestaosemear/VIEW/PRODUTO/listarProduto.php">Produtos</a></li>
     <li><a href="/gestaosemear/VIEW/CLIENTE/listarCliente.php">Cliente</a></li>
     <li><a href="/gestaosemear/VIEW/PEDIDO/listarPedido.php">Pedidos</a></li>
     <li><a href="/gestaosemear/CONTROLLER/logout.php">Logout</a></li>
