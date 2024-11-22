@@ -13,6 +13,11 @@
             return $dalCli->SelectID($id);
         }
 
+        public function SelectEndereco(string $end) {
+            $dalCli = new \DAL\cliente();
+            return $dalCli->SelectEndereco($end);
+        }        
+
         public function Insert(\MODEL\cliente $cliente){
             $dalCli = new \DAL\cliente();
             return $dalCli->Insert($cliente);

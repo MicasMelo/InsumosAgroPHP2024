@@ -27,5 +27,35 @@
             $dalPedido = new \DAL\pedido();
             return $dalPedido->Delete($id);
         }
+
+        public function Cancela($id){
+            $dalPedido = new \DAL\pedido();
+            return $dalPedido->Cancela($id);
+        }
+
+        public function Finaliza($id){
+            $dalPedido = new \DAL\pedido();
+            return $dalPedido->Finaliza($id);
+        }
+
+        public function Calcula(int $id, float $total) {
+            $dalPedido = new \DAL\Pedido();
+            return $dalPedido->Calcula($id, $total);
+        }
+    
+        public function Aceita(int $id) {
+            $dalPedido = new \DAL\Pedido();
+            return $dalPedido->Aceita($id);
+        }
+    
+        public function Agrupa(int $id) {
+            $dalPedido = new \DAL\Pedido();
+            return $dalPedido->Agrupa($id);
+        }
+    
+        public function VendasMensais() {
+            $dalPedido = new \DAL\Pedido();
+            return $dalPedido->VendasMensais();
+        }
     }
 ?>
