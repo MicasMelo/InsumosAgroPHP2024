@@ -37,6 +37,26 @@
             return $cliente;
         }
 
+        public function SelectEndereco(string $end) {
+            $sql = "SELECT * FROM cliente WHERE endereco LIKE ? ORDER BY endereco";
+            $con = conexao::conectar();
+            $query = $con->prepare($sql);
+            $query->execute(["%{$end}%"]);
+            $result = $query->fetchAll();
+        
+            $listaCliente = [];
+            foreach ($result as $linha) {
+                $cliente = new \MODEL\cliente();
+                $cliente->setID($linha['id']);
+                $cliente->setNome($linha['nome']);
+                $cliente->setContato($linha['contato']);
+                $cliente->setEndereco($linha['endereco']);
+                $listaCliente[] = $cliente;
+            }
+            conexao::desconectar();
+            return $listaCliente;
+        }
+
         public function Insert(\MODEL\cliente $cliente){
             $sql = "INSERT INTO cliente (nome, contato, endereco)
                     VALUES ('{$cliente->getNome()}','{$cliente->getContato()}','{$cliente->getEndereco()}');";

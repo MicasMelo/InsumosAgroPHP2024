@@ -56,6 +56,26 @@
             } return $listaProduto;
         }
 
+        public function SelectEstoque(int $estoque) {
+            $sql = "SELECT * FROM produto WHERE estoque < :estoque";
+            $con = conexao::conectar();
+            $query = $con->prepare($sql);
+            $query->execute([':estoque' => $estoque]);
+            $result = $query->fetchAll();
+            
+            $listaProduto = [];
+            foreach ($result as $linha) {
+                $prod = new \MODEL\produto();
+                $prod->setID($linha['id']);
+                $prod->setDescricao($linha['descricao']);
+                $prod->setEstoque($linha['estoque']);
+                $prod->setValor($linha['valor']);
+                $listaProduto[] = $prod;
+            }
+            conexao::desconectar();
+            return $listaProduto;
+        }
+        
         public function Insert(\MODEL\produto $produto){
             $sql = "INSERT INTO produto (descricao,estoque,valor)
                     VALUES ('{$produto->getDescricao()}','{$produto->getEstoque()}','{$produto->getValor()}');";
@@ -80,6 +100,15 @@
             $query = $con->prepare($sql);
             $result = $query->execute(array($id));
             $con = conexao::desconectar();
+            return $result;
+        }
+
+        public function Estoque(\MODEL\Produto $produto) {
+            $sql = "UPDATE produto SET estoque = ? WHERE id = ?;";
+            $con = Conexao::conectar();
+            $query = $con->prepare($sql);
+            $result = $query->execute(array($produto->getEstoque(), $produto->getID()));
+            $con = Conexao::desconectar();
             return $result;
         }
     }
