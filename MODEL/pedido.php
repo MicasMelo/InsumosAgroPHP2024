@@ -4,7 +4,7 @@
         private ?int $id;
         private ?int $idCliente;
         private ?int $idProduto;
-        private ?int $dataPedido;
+        private ?string $dataPedido;
         private ?int $quantidade;
         private ?float $total;
         private ?int $status;
@@ -32,7 +32,7 @@
         public function getData(){
             return $this->dataPedido;}
     
-        public function setData(int $dataPedido){
+        public function setData(string $dataPedido){
             $this->dataPedido = $dataPedido;}
 
         public function getQuantidade(){
